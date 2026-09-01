@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Interactive HTML learning quiz" />
+    <title>Learn HTML — HTML Tag Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Primary navigation">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">&lt;/&gt;</span
+          ><span>HTML Tag Explorer</span></a
+        ><button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mainNav"
+          aria-label="Open navigation"
+        >
+          ☰
+        </button>
+        <div class="nav-links" id="mainNav">
+          <a href="index.html#home">Home</a><a href="index.html#tags">Tags</a
+          ><a href="index.html#categories">Categories</a
+          ><a class="active" href="learn.html">Learn</a
+          ><a href="index.html#favorites">Favorites</a
+          ><a href="index.html#about">About</a
+          ><button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            ☾
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="learn-page container">
+      <section class="quiz-hero">
+        <span class="eyebrow">Learn mode</span>
+        <h1>Test your HTML knowledge.</h1>
+        <p>
+          Answer six questions, get immediate feedback, and learn from every
+          explanation.
+        </p>
+      </section>
+      <section class="quiz-card" id="quizCard">
+        <div class="quiz-top">
+          <span id="quizProgress">Question 1 of 6</span
+          ><strong id="quizScore">Score: 0</strong>
+        </div>
+        <div class="progress-track"><span id="quizBar"></span></div>
+        <div id="questionArea"></div>
+        <div id="feedback" class="quiz-feedback hidden"></div>
+        <button class="btn primary" id="nextQuestion" type="button">
+          Next Question →</button
+        ><button class="btn secondary hidden" id="restartQuiz" type="button">
+          Restart Quiz
+        </button>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <span>© 2026 HTML Tag Explorer</span
+        ><a href="index.html">Back to Explorer</a>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

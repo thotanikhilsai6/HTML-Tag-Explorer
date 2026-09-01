@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="HTML Tag Explorer — interactive HTML reference and learning platform."
+    />
+    <title>HTML Tag Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Primary navigation">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">&lt;/&gt;</span
+          ><span>HTML Tag Explorer</span></a
+        >
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mainNav"
+          aria-label="Open navigation"
+        >
+          ☰
+        </button>
+        <div class="nav-links" id="mainNav">
+          <a href="#home">Home</a><a href="#tags">Tags</a
+          ><a href="#categories">Categories</a><a href="learn.html">Learn</a
+          ><a href="#favorites">Favorites</a><a href="#about">About</a
+          ><button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark and light theme"
+          >
+            ☾
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero container" id="home">
+        <div class="hero-copy">
+          <span class="eyebrow"
+            >112 tags • interactive reference • beginner friendly</span
+          >
+          <h1>Learn HTML by <span>exploring it.</span></h1>
+          <p>
+            Search tags, understand their purpose, experiment with live
+            examples, save favorites, and track what you've learned.
+          </p>
+        </div>
+        <div class="search-shell" role="search">
+          <label class="sr-only" for="smartSearch">Search HTML tags</label>
+          <div class="search-box">
+            <span>⌕</span
+            ><input
+              id="smartSearch"
+              type="search"
+              autocomplete="off"
+              placeholder="Search tags, attributes, purposes, mistakes..."
+              aria-controls="suggestions"
+              aria-label="Search HTML tags"
+            /><button id="clearSearch" type="button" aria-label="Clear search">
+              ×
+            </button>
+          </div>
+          <div class="suggestions" id="suggestions" role="listbox"></div>
+          <div class="search-hints">
+            <span
+              >Try:
+              <button class="hint" type="button" data-query="image">
+                image
+              </button></span
+            ><span><kbd>/</kbd> or <kbd>Ctrl</kbd><kbd>K</kbd> to search</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#tags">Explore Tags →</a
+          ><a class="btn secondary" href="learn.html">Start Quiz</a
+          ><button class="btn ghost" id="randomTag" type="button">
+            🎲 Random Tag
+          </button>
+        </div>
+      </section>
+      <section
+        class="container dashboard-section"
+        aria-labelledby="dashboardTitle"
+      >
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Your progress</span>
+            <h2 id="dashboardTitle">Learning dashboard</h2>
+          </div>
+          <a href="learn.html">Open Learn →</a>
+        </div>
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <strong id="totalCount">112</strong><span>Total Tags</span>
+          </div>
+          <div class="stat-card">
+            <strong id="learnedCount">0</strong><span>Tags Learned</span>
+          </div>
+          <div class="stat-card">
+            <strong id="progressPercent">0%</strong><span>Complete</span>
+          </div>
+          <div class="stat-card">
+            <strong id="favoriteCount">0</strong><span>Favorites</span>
+          </div>
+          <div class="stat-card">
+            <strong id="recentCount">0</strong><span>Recently Viewed</span>
+          </div>
+        </div>
+        <div class="progress-track" aria-label="Learning progress">
+          <span id="progressBar"></span>
+        </div>
+      </section>
+      <section class="container" id="categories">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Organize your learning</span>
+            <h2>Categories</h2>
+          </div>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+      <section class="container tags-section" id="tags">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Reference library</span>
+            <h2 id="tagsTitle">All HTML Tags</h2>
+          </div>
+          <div class="toolbar">
+            <label class="sr-only" for="sortSelect">Sort tags</label
+            ><select id="sortSelect">
+              <option value="recommended">Recommended</option>
+              <option value="az">A → Z</option>
+              <option value="za">Z → A</option>
+              <option value="category">Category</option>
+            </select>
+          </div>
+        </div>
+        <div class="active-filters" id="activeFilters"></div>
+        <div class="tag-grid" id="tagGrid"></div>
+        <div class="empty-state hidden" id="emptyState">
+          <div>⌕</div>
+          <h3>No results found</h3>
+          <p>Try another keyword or clear the current filters.</p>
+          <button class="btn secondary" id="emptyClear" type="button">
+            Clear filters
+          </button>
+        </div>
+      </section>
+      <section class="container recent-section" id="favorites">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Saved &amp; history</span>
+            <h2>Recently Viewed</h2>
+          </div>
+          <button class="text-btn" id="clearRecent" type="button">
+            Clear history
+          </button>
+        </div>
+        <div class="mini-grid" id="recentGrid"></div>
+        <div class="section-heading favorites-heading">
+          <div><h2>⭐ My Favorites</h2></div>
+        </div>
+        <div class="mini-grid" id="favoriteGrid"></div>
+        <p class="empty-note" id="favoriteEmpty">
+          No favorites yet. Star a tag to save it here.
+        </p>
+      </section>
+      <section class="about container" id="about">
+        <div>
+          <span class="eyebrow">About the project</span>
+          <h2>A documentation platform built with the web itself.</h2>
+        </div>
+        <p>
+          HTML Tag Explorer demonstrates semantic HTML, responsive CSS,
+          accessible interactions, local storage and practical JavaScript while
+          providing a useful place to learn HTML.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#home"
+            ><span class="brand-mark">&lt;/&gt;</span
+            ><span>HTML Tag Explorer</span></a
+          >
+          <p>Learn, experiment and master HTML one tag at a time.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <a href="#tags">Tags</a><a href="#categories">Categories</a
+          ><a href="learn.html">Learn / Quiz</a>
+        </div>
+        <div>
+          <h3>Categories</h3>
+          <a href="#tags">Structure</a><a href="#tags">Forms</a
+          ><a href="#tags">Media</a>
+        </div>
+        <div>
+          <h3>Project</h3>
+          <a href="#" id="githubLink">GitHub / Project</a
+          ><a href="#about">About</a><span>Version 3.0</span>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 HTML Tag Explorer</span
+        ><span>Built with vanilla HTML, CSS &amp; JavaScript</span>
+      </div>
+    </footer>
+    <button
+      class="back-top"
+      id="backTop"
+      type="button"
+      aria-label="Back to top"
+    >
+      ↑
+    </button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

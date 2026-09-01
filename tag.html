@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="HTML Tag Explorer documentation" />
+    <title>HTML Tag Explorer — Tag</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Primary navigation">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">&lt;/&gt;</span
+          ><span>HTML Tag Explorer</span></a
+        ><button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mainNav"
+          aria-label="Open navigation"
+        >
+          ☰
+        </button>
+        <div class="nav-links" id="mainNav">
+          <a href="index.html#home">Home</a><a href="index.html#tags">Tags</a
+          ><a href="index.html#categories">Categories</a
+          ><a href="learn.html">Learn</a
+          ><a href="index.html#favorites">Favorites</a
+          ><a href="index.html#about">About</a
+          ><button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            ☾
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="tag-page container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a><span>/</span
+        ><a href="index.html#tags">Tags</a><span>/</span
+        ><span id="crumbTag">Tag</span>
+      </div>
+      <div id="tagContent"></div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <span>© 2026 HTML Tag Explorer</span
+        ><a href="index.html">Back to Explorer</a>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
